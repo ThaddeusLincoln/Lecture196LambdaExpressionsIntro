@@ -21,5 +21,6 @@ one method. They are typical and often used in places where we use anonymous
  What if the run() method we implement contains multiple lines? This is not a 
  problem, all we have to do is surround the lambda's body with curly braces.
  
-   
+ NOTE: We said that we can only use LAMBDA-EXPRESSIONS for interfaces that
+ require the implementation of only one method but... 
 
