@@ -1,5 +1,25 @@
 LAMBDA EXPRESSION : is a new feature introduced with Java8 and what it does 
 is provide us with an easier way to work with interfaces that have only got 
 one method. They are typical and often used in places where we use anonymous
- classes.  
+ classes.
+ 
+ Every LAMBDA-EXPRESSION has 3 parts:
+ 
+ 1 - Arguments List
+ 2 - Narrow Token
+ 3 - The Body
+ 
+ NOTE : because the compiler needs to match the lambda expression to a method,
+ LAMBDA-EXPRESSIONS can only be used with interfaces that contain one method
+ that has to be implemented. This interfaces are also refered to as 
+ FUNCTIONAL INTERFACES.
+ 
+ By using a LAMBDA EXPRESSION instead of creating a class that implements
+ RUNNABLE, or instead of using an ANONYMOUS-CLASS we're able to reduce the
+ lines of code that we have to write and we could focus on the important code.
+ 
+ What if the run() method we implement contains multiple lines? This is not a 
+ problem, all we have to do is surround the lambda's body with curly braces.
+ 
+   
 
