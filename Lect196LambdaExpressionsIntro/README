@@ -22,5 +22,19 @@ one method. They are typical and often used in places where we use anonymous
  problem, all we have to do is surround the lambda's body with curly braces.
  
  NOTE: We said that we can only use LAMBDA-EXPRESSIONS for interfaces that
- require the implementation of only one method but... 
+ require the implementation of only one method but the COMPARATOR documentation
+ states the the COMPARATOR interface is a FUNCTIONAL interface. Actually it
+ quotes: "this is a functional interface and can therefore be used as the 
+ assignment target for a lambda expression or method reference". 
+ 
+ In this case (the COMPARATOR INTERFACE) we can use the LAMBDA even if there are 
+ two methods that do not have default implementation - compare() and equals() -,
+ because the equals() method will always have a default implementation. Given 
+ that all classes descend from Object and Object contains an equal method,
+ that means that every instance of that implements COMPARATOR will already 
+ have an implementation of the equals method. Therefore the COMPARATOR Interface
+ really in reality only has a single method that always has to be implement
+ by the classes that implement that interface, hence COMPARATOR is a 
+ FUNCTIONAL INTERFACE and we can use LAMBDA-EXPRESSIONS instead of 
+ an ANONYNOUS-CLASS.    
 
