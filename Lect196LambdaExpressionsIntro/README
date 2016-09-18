@@ -1,0 +1,5 @@
+LAMBDA EXPRESSION : is a new feature introduced with Java8 and what it does 
+is provide us with an easier way to work with interfaces that have only got 
+one method. They are typical and often used in places where we use anonymous
+ classes.  
+
