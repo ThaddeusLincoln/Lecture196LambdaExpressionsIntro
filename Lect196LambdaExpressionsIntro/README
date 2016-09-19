@@ -37,4 +37,60 @@ one method. They are typical and often used in places where we use anonymous
  by the classes that implement that interface, hence COMPARATOR is a 
  FUNCTIONAL INTERFACE and we can use LAMBDA-EXPRESSIONS instead of 
  an ANONYNOUS-CLASS.    
+ 
+In the update of the example, instead of an Anonymous class we 
+will pass LAMDA-EXPRESSION, producing the same result.
+
+One nice thing about LAMDBDA-EXPRESSIONS is that is quite easy to spot the 
+code that is going to be run, especially when only one line of code is to be used.
+
+NOTE : in the parameters part of the LAMBDA-EXPRESSION, we can pass the type of the parameter, 
+or not. In the second case the compiler will infer the type of the object. 
+
+NOTE : when we only have one parameter in the LAMBDA we don't need to put that 
+parameter between parentheses. We only are forced to put parentheses when there 
+are more than 1 parameter or when there's no parameters.
+
+NOTE: we can't avoid having to define an interface when using LAMBDAs, 
+but still out work is more simplified and concise.
+
+What happens with interfaces with a single method that return a value? Well, 
+when the LAMBDA body consists of a single statement that evaluates to a value, 
+the return keyword is assumed and the returned value is inferred to be type of 
+the evaluated value (which in our sample is String).
+
+We can assign LAMBDA to variables and use them later, and in more than one place. 
+
+======= Lecture 198 : LAMBDA-EXPRESSIONs nested blocks  ========
+
+If our lamda contain more than one statement we'll have to use the "return" 
+keyword and we put the code between curly braces {...}. 
+
+NOTE : once we have the curly braces the return keyword is mandatory even 
+if we only have one line of code.
+
+NOTE : the LAMBDA isn't a class, so when the code in the LAMDA runs and an 
+anonymous instance isn't created the LAMBDA is treated as a nest block of 
+code of its current class, and it has the same scope as a nested block. 
+
+Code within a nested block can reference variables defines within the 
+enclosing block, which in our example is the doSomething() method's body. 
+What about ANONYMOUS classes? Well for anonymous classes, if we want to 
+use a local variable defined outside of it we have to declare it as "final". 
+In our example if we try to use "i" inside the anonymous class 
+("i" is not final) we'll get a compile error.
+
+But, why do local variables have to be declared as FINAL when used 
+within ANONOYMOUS classes? Because the local variable doesn't belong 
+to the anonymous class instance, what actually happens under the 
+covers is that the variable is replaced by whatever the value 
+of "i" is when the instance is constructed. So is possible we 
+may not use the instance of an anonymous class for a while, 
+we may even pass it to a method in another class and there'd be no way 
+for the java runtime to update the value within the anonymous class instance 
+every time it changed within the doSomething() method. That is to say, 
+the value will get out of sync. For that reason the values of local variables 
+declared outside the scope of the anonymous class are not allowed to change, 
+they have to be declared as FINAL. 
+
 
