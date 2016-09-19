@@ -71,6 +71,9 @@ class AnotherClass {
 	
 	public String doSomething(){
 		
+		// TODO : in the next lecture we'll see how lambda expressions are treated like in nested blocks
+		int i = 0; 
+		
 		// we're going to use a lambda now instead
 		UpperConcat uc = (s1, s2) -> {
 			System.out.println("The lambda expression class's name is: " + getClass().getSimpleName());
@@ -81,15 +84,6 @@ class AnotherClass {
 		System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 		return Main.doStringStuff(uc, "String1", "String2");
 		
-		/*System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
-		return Main.doStringStuff(new UpperConcat() {
-			
-			@Override
-			public String upperConcat(String s1, String s2) {
-				System.out.println("The Anonymous Class class's name is: " + getClass().getSimpleName());
-				return s1.toUpperCase() + s2.toUpperCase();
-			}
-		}, "String1", "String2");*/
 	}
 	
 }
