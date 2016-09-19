@@ -9,14 +9,14 @@ public class Main {
 	
 	public static void main(String[] args){
 	
-		new Thread(()->{
+		/*new Thread(()->{
 			
 			System.out.println("Mostrando texto desde lamda expression, el cual usa Runnable");
 			System.out.println("Line 2");
 			System.out.println("This is line 3 of the body of the LAMBDA-EXPRESSION");
 			
 			
-		}).start();
+		}).start();*/
 	
 		// 
 		Employee abraham = new Employee("Abraham Lincoln", 50);
@@ -31,27 +31,22 @@ public class Main {
 		// let's sort the employees by name in descending order without using Lambda-Expressions
 		// and using the COMPARATOR-Interface
 		
-		Collections.sort(employees, new Comparator<Employee>() {
+		/*Collections.sort(employees, new Comparator<Employee>() {
 
 			@Override
 			public int compare(Employee employee1, Employee employee2) {
 				return employee1.getName().compareTo(employee2.getName());
 			}
 			
-		});
+		});*/
+		
+		// doing the same as before but with lambda expressions now
+		Collections.sort(employees, (employee1, employee2)->
+		employee1.getName().compareTo(employee2.getName()));
 		
 		for(Employee employee : employees){
-			
 			System.out.println(employee.getName());
 		}
-		
-		
-		
-		
-		
-	
-		
-		
 		
 	}
 }
