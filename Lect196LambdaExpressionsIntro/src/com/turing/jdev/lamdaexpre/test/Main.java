@@ -49,14 +49,21 @@ public class Main {
 		}
 		
 		// first we're going to proceed with an anonymous class
-		String sillyString = doStringStuff(new UpperConcat() {
+		/*String sillyString = doStringStuff(new UpperConcat() {
 			
 			@Override
 			public String upperConcat(String s1, String s2) {
 				return s1.toUpperCase() + s2.toUpperCase();
 			}
 		}, employees.get(0).getName(), employees.get(1).getName());
+		System.out.println(sillyString);*/
+		
+		// now we'll substitute it with a lambda
+		UpperConcat uc = (String s1, String s2) -> s1.toUpperCase() + s2.toUpperCase();
+		// UpperConcat uc2 = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase(); // both lines are the same
+		String sillyString = doStringStuff(uc, employees.get(0).getName(), employees.get(1).getName());
 		System.out.println(sillyString);
+		
 		
 	}
 	
