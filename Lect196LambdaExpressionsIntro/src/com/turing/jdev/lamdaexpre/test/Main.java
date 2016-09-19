@@ -8,17 +8,7 @@ import java.util.List;
 public class Main {
 	
 	public static void main(String[] args){
-	
-		/*new Thread(()->{
-			
-			System.out.println("Mostrando texto desde lamda expression, el cual usa Runnable");
-			System.out.println("Line 2");
-			System.out.println("This is line 3 of the body of the LAMBDA-EXPRESSION");
-			
-			
-		}).start();*/
-	
-		// 
+		
 		Employee abraham = new Employee("Abraham Lincoln", 50);
 		Employee rosa = new Employee("Rosa Parks", 35);
 		Employee thaddeuss = new Employee("Thaddeus Stevens", 38);
@@ -28,44 +18,9 @@ public class Main {
 		employees.add(thaddeuss);
 		employees.add(abraham);
 		
-		// let's sort the employees by name in descending order without using Lambda-Expressions
-		// and using the COMPARATOR-Interface
-		
-		/*Collections.sort(employees, new Comparator<Employee>() {
-
-			@Override
-			public int compare(Employee employee1, Employee employee2) {
-				return employee1.getName().compareTo(employee2.getName());
-			}
-			
-		});*/
-		
-		// doing the same as before but with lambda expressions now
-		Collections.sort(employees, (employee1, employee2)->
-		employee1.getName().compareTo(employee2.getName()));
-		
-		for(Employee employee : employees){
-			System.out.println(employee.getName());
-		}
-		
-		// first we're going to proceed with an anonymous class
-		/*String sillyString = doStringStuff(new UpperConcat() {
-			
-			@Override
-			public String upperConcat(String s1, String s2) {
-				return s1.toUpperCase() + s2.toUpperCase();
-			}
-		}, employees.get(0).getName(), employees.get(1).getName());
-		System.out.println(sillyString);*/
-		
-		// now we'll substitute it with a lambda
-		UpperConcat uc = (String s1, String s2) -> {
-			String result = s1.toUpperCase() + s2.toUpperCase();
-			return result;
-		};
-		// UpperConcat uc2 = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase(); // both lines are the same
-		String sillyString = doStringStuff(uc, employees.get(0).getName(), employees.get(1).getName());
-		System.out.println(sillyString);
+		AnotherClass anotherClass = new AnotherClass();
+		String s = anotherClass.doSomething();
+		System.out.println(s);
 		
 		
 	}
@@ -110,4 +65,20 @@ class Employee{
  */
 interface UpperConcat {
 	public String upperConcat(String s1, String s2);
+}
+
+class AnotherClass {
+	
+	public String doSomething(){
+		System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
+		return Main.doStringStuff(new UpperConcat() {
+			
+			@Override
+			public String upperConcat(String s1, String s2) {
+				System.out.println("The Anonymous Class class's name is: " + getClass().getSimpleName());
+				return s1.toUpperCase() + s2.toUpperCase();
+			}
+		}, "String1", "String2");
+	};
+	
 }
