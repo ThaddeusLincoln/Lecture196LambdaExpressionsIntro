@@ -70,7 +70,18 @@ interface UpperConcat {
 class AnotherClass {
 	
 	public String doSomething(){
+		
+		// we're going to use a lambda now instead
+		UpperConcat uc = (s1, s2) -> {
+			System.out.println("The lambda expression class's name is: " + getClass().getSimpleName());
+			String result = s1.toUpperCase() + s2.toUpperCase();
+			return result;
+		};
+		
 		System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
+		return Main.doStringStuff(uc, "String1", "String2");
+		
+		/*System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 		return Main.doStringStuff(new UpperConcat() {
 			
 			@Override
@@ -78,7 +89,7 @@ class AnotherClass {
 				System.out.println("The Anonymous Class class's name is: " + getClass().getSimpleName());
 				return s1.toUpperCase() + s2.toUpperCase();
 			}
-		}, "String1", "String2");
-	};
+		}, "String1", "String2");*/
+	}
 	
 }
