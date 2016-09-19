@@ -59,7 +59,10 @@ public class Main {
 		System.out.println(sillyString);*/
 		
 		// now we'll substitute it with a lambda
-		UpperConcat uc = (String s1, String s2) -> s1.toUpperCase() + s2.toUpperCase();
+		UpperConcat uc = (String s1, String s2) -> {
+			String result = s1.toUpperCase() + s2.toUpperCase();
+			return result;
+		};
 		// UpperConcat uc2 = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase(); // both lines are the same
 		String sillyString = doStringStuff(uc, employees.get(0).getName(), employees.get(1).getName());
 		System.out.println(sillyString);
