@@ -94,3 +94,18 @@ declared outside the scope of the anonymous class are not allowed to change,
 they have to be declared as FINAL. 
 
 
+============= Lecture 199 : Scope and and Functional Programming ============
+
+Local variables when used in lambda expressions must be "effectively final", 
+this meaning that they should either be declared final, or their value should
+not change.
+
+
+
+
+
+
+
+
+
+
