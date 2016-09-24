@@ -108,5 +108,13 @@ because the execution the enclosing scope has completed.
 This behavior is also enhanced in loops, as each object variable in the loop,
 e.g every instance of employee, is effectively final, given that a local 
 variable is created for each iteration of the loop and that means that the variable
-is "effectively final for each iteration". 
+is "effectively final for each iteration". But if we move their declaration 
+to outside the loop they will no longer be effectively final.
+
+Along with lambda expressions, in Java 8 were introduced a number of functionalities 
+to work with them, like working for iterables.
+
+
+
+
 

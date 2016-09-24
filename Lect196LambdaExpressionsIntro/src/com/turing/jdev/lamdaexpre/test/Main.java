@@ -16,14 +16,18 @@ public class Main {
 		employees.add(thaddeuss);
 		employees.add(abraham);
 		
-		/*AnotherClass anotherClass = new AnotherClass();
-		String s = anotherClass.doSomething();
-		System.out.println(s);*/
-		
-		for(Employee employee : employees){
+		// instead of this
+		/*for(Employee employee : employees){
 			System.out.println(employee.getName());
-			new Thread( () -> System.out.println(employee.getAge())).start();
-		}
+			System.out.println(employee.getAge());
+		}*/
+		
+		// we're going to use this lambda-expression functionality
+		employees.forEach(employee -> {
+			System.out.println(employee.getName());
+			System.out.println(employee.getAge());
+			
+		});
 		
 		
 	}
