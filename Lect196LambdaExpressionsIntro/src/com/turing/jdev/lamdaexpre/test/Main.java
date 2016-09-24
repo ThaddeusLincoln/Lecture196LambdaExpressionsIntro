@@ -1,8 +1,6 @@
 package com.turing.jdev.lamdaexpre.test;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -18,9 +16,14 @@ public class Main {
 		employees.add(thaddeuss);
 		employees.add(abraham);
 		
-		AnotherClass anotherClass = new AnotherClass();
+		/*AnotherClass anotherClass = new AnotherClass();
 		String s = anotherClass.doSomething();
-		System.out.println(s);
+		System.out.println(s);*/
+		
+		for(Employee employee : employees){
+			System.out.println(employee.getName());
+			new Thread( () -> System.out.println(employee.getAge())).start();
+		}
 		
 		
 	}
@@ -89,6 +92,23 @@ class AnotherClass {
 		
 		System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 		return Main.doStringStuff(uc, "String1", "String2");
+		
+	}
+	
+	public void printValue(){
+		
+		int number = 25;
+		Runnable r = () -> {
+			
+			try{
+				Thread.sleep(5000);
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println("The value is " + number);
+			
+		};
 		
 	}
 	

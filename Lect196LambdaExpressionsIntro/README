@@ -100,12 +100,13 @@ Local variables when used in lambda expressions must be "effectively final",
 this meaning that they should either be declared final, or their value should
 not change.
 
+But what about variables that we declare inside lambda expression? We can change 
+variable declared inside the lambda, because those variables are within the 
+lambda scope, so can't be change outside the lambda. Also they won't go away
+because the execution the enclosing scope has completed.
 
-
-
-
-
-
-
-
+This behavior is also enhanced in loops, as each object variable in the loop,
+e.g every instance of employee, is effectively final, given that a local 
+variable is created for each iteration of the loop and that means that the variable
+is "effectively final for each iteration". 
 
