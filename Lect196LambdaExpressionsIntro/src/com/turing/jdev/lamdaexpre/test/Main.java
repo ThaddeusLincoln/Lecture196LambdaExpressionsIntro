@@ -62,6 +62,12 @@ public class Main {
 			}
 		}
 		
+		// sample of chaining functions 
+		Function<Employee, String> upperCase = employee -> employee.getName().toUpperCase();
+		Function<String, String> firstName = name -> name.substring(0, name.indexOf(' '));
+		Function chainedFunction = upperCase.andThen(firstName);
+		System.out.println(chainedFunction.apply(employees.get(0)));
+		
 	}
 	
 	private static String getAName(Function<Employee, String> getName, Employee employee){
