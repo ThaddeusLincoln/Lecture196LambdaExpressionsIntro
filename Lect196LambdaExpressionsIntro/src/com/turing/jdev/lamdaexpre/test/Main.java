@@ -3,6 +3,7 @@ package com.turing.jdev.lamdaexpre.test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -37,25 +38,13 @@ public class Main {
 			}
 		});
 		
-		// now we're trying to chain 2 Predicates
-		IntPredicate greaterThan15 = i -> i > 15;
-		IntPredicate lessThan100 = i -> i < 100;
+		// we're going to try Function interface
+		Function<Employee, String> getLastName = (Employee employee)-> {
+			return employee.getName().substring(employee.getName().indexOf(' ') + 1);
+		};
 		
-		System.out.println("Testing Predicates Chaining ================");
-		System.out.println(greaterThan15.and(lessThan100).test(50));
-		
-		// assuming we want to print 10 random numbers
-		// 1. using Random class
-		Random random = new Random();
-		for(int i = 0; i < 10; i++){
-			System.out.println(random.nextInt(100));
-		}
-		
-		// 2. using Supplier interface
-		Supplier<Integer> randomSupplier = ()-> random.nextInt(10000);
-		for(int i = 0; i < 10; i++){
-			System.out.println(randomSupplier.get());
-		}
+		String lastName = getLastName.apply(employees.get(1));
+		System.out.println(lastName);
 		
 		
 	}

@@ -162,7 +162,22 @@ Supplier interface=================================
 
 Supplier, doesn't accept any arguments and it does return a value. Because of that Supplier 
 always return a value we have to include the expected return type when we declare it. And just 
-as with other lambda expressions we can pass suppliers to methods.  
+as with other lambda expressions we can pass suppliers to methods. 
+
+
+==== Lecture 202 : Functions =============
+
+NOTE : the Consumer interface doesn't return a value, Supplier doesn't accept any parameter,
+while Predicates only return true or false.
+
+Function interface : the interface represents a function that takes one parameter and returns
+a value, the functional method (the one that use with the lambdas) is the apply() method. The 
+advantage of using the Function interface is that we can pass code that accepts and returns a value
+to a method in the form of a lambda expression and the run that code without having to create an
+interface and a class that implements the interface.  
+
+   
+  
 
 
 
