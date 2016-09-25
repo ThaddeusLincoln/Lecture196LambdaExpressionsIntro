@@ -186,13 +186,20 @@ example the LonToIntFunction accepts a long and returns an int.
 We can also chain functions together same as for Predicates, using in this case the 
 andThen() method, which takes a function as a parameter. 
 
-Chaining functions requires 4 steps:
+Chaining functions requires these steps:
 
-1. We have to create what's called a composed function, the function that calls the andThen()
+We have to create what's called a composed function, the function that calls the andThen()
 method will run first, and the the function passes the argument to andThen will operate on its
 results.  
 
- 
+What do we do if we need more than 2 arguments in a lambda expression? We'll we can 
+write lambda expressions that takes as many arguments as we want, but we can't the 
+use those that take more than two with any of the interfaces in the java.util.function
+package. This may only be a problem when we want to use an API that perhaps takes one
+of the interfaces as a parameter, so in that case we probably want to message our code,
+so that we can use a lambda that matches the required interface. 
+
+  
 
    
   
