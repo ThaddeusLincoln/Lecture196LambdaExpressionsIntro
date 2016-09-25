@@ -149,7 +149,20 @@ can use in those any mathematical expression that returns the specified data typ
 We can also "chain" (connect) Predicates together, e.g, let's assume that we want to test
 whether a number is greater than 15 and less that 100. We could update our existing predicate
 to contain both conditions, but let's assume that for some reason we don't want or we can't
-do that. So what we'll do is create a second Predicate and chain it to the first one.  
+do that. So what we'll do is create a second Predicate and chain it to the first one. It will
+return true if both Predicates are true, and false if at least one of the two is false.
+
+The Predicate interface also contains or(), negate() and isEquals() methods. The more specific
+predicate interfaces contain or() and negate() but they don't contain isEquals() and they
+don't extend Predicate. The and(), or() and negate() methods can be chained together.
+This chaining is useful if there's a situation where we need to build a condition on the fly 
+or when we want to reuse some Predicates in different areas of an application. 
+
+Supplier interface=================================
+
+Supplier, doesn't accept any arguments and it does return a value. Because of that Supplier 
+always return a value we have to include the expected return type when we declare it. And just 
+as with other lambda expressions we can pass suppliers to methods.  
 
 
 

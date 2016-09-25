@@ -2,8 +2,10 @@ package com.turing.jdev.lamdaexpre.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Main {
 	
@@ -42,6 +44,18 @@ public class Main {
 		System.out.println("Testing Predicates Chaining ================");
 		System.out.println(greaterThan15.and(lessThan100).test(50));
 		
+		// assuming we want to print 10 random numbers
+		// 1. using Random class
+		Random random = new Random();
+		for(int i = 0; i < 10; i++){
+			System.out.println(random.nextInt(100));
+		}
+		
+		// 2. using Supplier interface
+		Supplier<Integer> randomSupplier = ()-> random.nextInt(10000);
+		for(int i = 0; i < 10; i++){
+			System.out.println(randomSupplier.get());
+		}
 		
 		
 	}
