@@ -120,7 +120,7 @@ add anything new to the language. Other developers argue that lambdas are Java's
 step into functional programming which is a programming paradigm that focuses on
 computing and returning results. 
 
-==== Lecture 200 : Functional Interfaces and Predicates ==============================
+==== Lecture 200 & 201 : Functional Interfaces, Predicates and Suppliers ==============
 
 We're going to take a look into the package java.util.function which was added in Java8.
 
@@ -134,7 +134,20 @@ different age criteria. Instead all we need is a different lambda expression tha
 map to the Predicate interface. 
 
 We can also pass an anonymous predicate to the method, which reinforces the point that
-lambda expressions are not the unique way. 
+lambda expressions are not the unique way. If we don't want or we can't use lambda
+there's always anonymous class. 
+
+NOTE : the Consumer and the Predicate interface are general interfaces, they don't care
+about the type of parameter being passed to the lambda expression, they're using generic
+to infer the type. Now, there are other Consumer and Predicate interfaces that expects 
+a specific type of parameter, for example the Double Consumer, expects a lambda expression
+that has a double argument. There's also an IntConsumer and a LongConsumer. Same for 
+Predicates, i.e, DoublePredicate, IntPredicate and LongPredicate. Where possible 
+we probably should use the more specific type of lambda to improve readability. And we
+can use in those any mathematical expression that returns the specified data type.
+
+
+   
 
 
 

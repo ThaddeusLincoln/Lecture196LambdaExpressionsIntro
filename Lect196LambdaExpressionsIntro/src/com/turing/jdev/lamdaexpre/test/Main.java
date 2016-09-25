@@ -2,6 +2,7 @@ package com.turing.jdev.lamdaexpre.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 public class Main {
@@ -33,6 +34,12 @@ public class Main {
 				return employee.getAge() <= 35;
 			}
 		});
+		
+		// We're now going to use a predicate that tests whether an int is grater than 15
+		IntPredicate intPredicate = i -> i > 15;
+		System.out.println("==== Result of using this IntPredicate");
+		System.out.println(intPredicate.test(10));
+		
 		
 	}
 	
