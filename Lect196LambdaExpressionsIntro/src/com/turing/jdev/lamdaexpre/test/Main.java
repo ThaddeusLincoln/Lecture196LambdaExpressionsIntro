@@ -39,14 +39,33 @@ public class Main {
 		});
 		
 		// we're going to try Function interface
+		
+		// 1. getting last name
 		Function<Employee, String> getLastName = (Employee employee)-> {
 			return employee.getName().substring(employee.getName().indexOf(' ') + 1);
+		};
+		
+		//2. getting first name
+		Function<Employee, String> getFirstName = (Employee employee)-> {
+			return employee.getName().substring(0, employee.getName().indexOf(' '));
 		};
 		
 		String lastName = getLastName.apply(employees.get(1));
 		System.out.println(lastName);
 		
+		Random random1 = new Random();
+		for(Employee employee : employees){
+			if(random1.nextBoolean()){
+				System.out.println(getAName(getFirstName, employee));
+			}else{
+				System.out.println(getAName(getLastName, employee));
+			}
+		}
 		
+	}
+	
+	private static String getAName(Function<Employee, String> getName, Employee employee){
+		return getName.apply(employee);
 	}
 	
 	/**
