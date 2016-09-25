@@ -21,9 +21,18 @@ public class Main {
 		employees.add(alexander);
 		employees.add(martinL);
 		
-		// 
-		printEmployeesByAge(employees, "Employees over 40", employee -> employee.getAge() > 40);
-		printEmployeesByAge(employees, "Employees under 40", employee -> employee.getAge() <= 40);
+		// passing lambda expressions as predicate
+		printEmployeesByAge(employees, "\nEmployees over 40", employee -> employee.getAge() > 40);
+		printEmployeesByAge(employees, "\nEmployees under 40", employee -> employee.getAge() <= 40);
+		
+		// using an anonymous class instead of a lambda expression
+		printEmployeesByAge(employees, "\nEmployees under 35", new Predicate<Employee>() {
+			
+			@Override
+			public boolean test(Employee employee) {
+				return employee.getAge() <= 35;
+			}
+		});
 		
 	}
 	

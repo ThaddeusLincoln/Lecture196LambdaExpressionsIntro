@@ -126,7 +126,18 @@ We're going to take a look into the package java.util.function which was added i
 
 Predicates: to their test() method is passed an object as which will be passed as
 parameter to the lambda expressions that maps to the predicate. Predicates, as we can 
-see in the example are lambda expressions.  
+see in the example are lambda expressions. 
+
+Predicates are quite powerful, because we can pass all sorts of conditions to the method,
+and we don't have to write a different if condition to filter the employees based on
+different age criteria. Instead all we need is a different lambda expression that can 
+map to the Predicate interface. 
+
+We can also pass an anonymous predicate to the method, which reinforces the point that
+lambda expressions are not the unique way. 
+
+
+
 
 
 
