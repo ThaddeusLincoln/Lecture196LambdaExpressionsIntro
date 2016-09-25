@@ -35,10 +35,13 @@ public class Main {
 			}
 		});
 		
-		// We're now going to use a predicate that tests whether an int is grater than 15
-		IntPredicate intPredicate = i -> i > 15;
-		System.out.println("==== Result of using this IntPredicate");
-		System.out.println(intPredicate.test(10));
+		// now we're trying to chain 2 Predicates
+		IntPredicate greaterThan15 = i -> i > 15;
+		IntPredicate lessThan100 = i -> i < 100;
+		
+		System.out.println("Testing Predicates Chaining ================");
+		System.out.println(greaterThan15.and(lessThan100).test(50));
+		
 		
 		
 	}

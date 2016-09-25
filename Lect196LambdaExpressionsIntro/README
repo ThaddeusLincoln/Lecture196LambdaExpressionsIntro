@@ -146,12 +146,10 @@ Predicates, i.e, DoublePredicate, IntPredicate and LongPredicate. Where possible
 we probably should use the more specific type of lambda to improve readability. And we
 can use in those any mathematical expression that returns the specified data type.
 
-
-   
-
-
-
-
+We can also "chain" (connect) Predicates together, e.g, let's assume that we want to test
+whether a number is greater than 15 and less that 100. We could update our existing predicate
+to contain both conditions, but let's assume that for some reason we don't want or we can't
+do that. So what we'll do is create a second Predicate and chain it to the first one.  
 
 
 
