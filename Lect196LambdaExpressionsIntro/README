@@ -114,6 +114,24 @@ to outside the loop they will no longer be effectively final.
 Along with lambda expressions, in Java 8 were introduced a number of functionalities 
 to work with them, like working for iterables.
 
+For some developers lambdas are nothing more than a syntactic sugar, that allows more
+convenient and concise way of writing anonymous classes and that in reality they don't
+add anything new to the language. Other developers argue that lambdas are Java's first
+step into functional programming which is a programming paradigm that focuses on
+computing and returning results. 
+
+==== Lecture 200 : Functional Interfaces and Predicates ==============================
+
+We're going to take a look into the package java.util.function which was added in Java8.
+
+Predicates: to their test() method is passed an object as which will be passed as
+parameter to the lambda expressions that maps to the predicate. Predicates, as we can 
+see in the example are lambda expressions.  
+
+
+
+
+
 
 
 
